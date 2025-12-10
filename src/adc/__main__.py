@@ -1,4 +1,4 @@
-"""Entry point for python_template_project."""
+"""Entry point for adc."""
 
 import sys  # pragma: no cover
 

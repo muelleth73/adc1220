@@ -1,9 +1,9 @@
 # Command Line Interface
 
-Command line options for python_template_project
+Command line options for adc
 
 ```bash
-python -m python_template_project [OPTIONS] input
+python -m adc [OPTIONS] input
 ```
 
 ## Options
@@ -23,37 +23,37 @@ python -m python_template_project [OPTIONS] input
 ### 1. Basic usage
 
 ```bash
-python -m python_template_project input
+python -m adc input
 ```
 
 ### 2. With verbose logging
 
 ```bash
-python -m python_template_project -v input
-python -m python_template_project --verbose input
+python -m adc -v input
+python -m adc --verbose input
 ```
 
 ### 3. With quiet mode
 
 ```bash
-python -m python_template_project -q input
-python -m python_template_project --quiet input
+python -m adc -q input
+python -m adc --quiet input
 ```
 
 ### 4. With min_dist parameter
 
 ```bash
-python -m python_template_project --min_dist 25 input
+python -m adc --min_dist 25 input
 ```
 
 ### 5. With extract_waypoints parameter
 
 ```bash
-python -m python_template_project --extract_waypoints True input
+python -m adc --extract_waypoints True input
 ```
 
 ### 6. With elevation parameter
 
 ```bash
-python -m python_template_project --elevation True input
+python -m adc --elevation True input
 ```
