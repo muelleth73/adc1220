@@ -27,7 +27,7 @@ dev = [
 requires-dist = [
     { name = "docopt", specifier = ">=0.6.2" },
     { name = "rpi-gpio", marker = "platform_machine == 'aarch64'", specifier = ">=0.7.1" },
-    { name = "senspi", directory = "../sensor-spi" },
+    { name = "senspi", git = "ssh://git@github.com/muelleth73/sensor-spi.git" },
     { name = "spidev", marker = "platform_machine == 'aarch64'", specifier = ">=3.8" },
 ]
 
@@ -281,29 +281,12 @@ wheels = [
 
 [[package]]
 name = "senspi"
-source = { directory = "../sensor-spi" }
+version = "0.0.1.dev6+2d9a950"
+source = { git = "ssh://git@github.com/muelleth73/sensor-spi.git#2d9a95059a292135a33cfbdfa7911883709e0c18" }
 dependencies = [
     { name = "docopt" },
     { name = "pyyaml" },
     { name = "types-pyyaml" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "docopt", specifier = ">=0.6.2" },
-    { name = "pyyaml", specifier = "==6.0.*" },
-    { name = "types-pyyaml", specifier = ">=6.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "basedpyright", specifier = ">=1.38.0" },
-    { name = "codespell", specifier = ">=2.4.1" },
-    { name = "funlog", specifier = ">=0.2.1" },
-    { name = "pytest", specifier = ">=9.0.2" },
-    { name = "pytest-sugar", specifier = ">=1.1.1" },
-    { name = "rich", specifier = ">=14.3.2" },
-    { name = "ruff", specifier = ">=0.15.1" },
 ]
 
 [[package]]
