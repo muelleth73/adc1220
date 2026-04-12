@@ -1,5 +1,3 @@
-import importlib.util
-
 import pytest
 
 adc = pytest.importorskip("adc1220")
