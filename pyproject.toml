@@ -37,7 +37,8 @@ classifiers = [
 
 dependencies = [
   "docopt>=0.6.2",
-  "senspi @ {root:uri}/../sensor-spi",
+  # "senspi @ {root:uri}/../sensor-spi",
+  "senspi @ git+ssh://git@github.com/muelleth73/sensor-spi.git",
   # push-pull sensor using ADS1220 analog-to-digital converter
   "RPi.GPIO>=0.7.1; platform_machine == 'aarch64'",
   "spidev>=3.8; platform_machine == 'aarch64'",
