@@ -1,7 +1,12 @@
-from adc1220.ads1220 import initialize
+import importlib.util
+
+import pytest
+
+adc = pytest.importorskip("adc1220")
+ads = pytest.importorskip("ads1220")
 
 
 def test_placeholder():
-    r = initialize()
+    r = ads.initialize()
     v = r()
     assert v is not None

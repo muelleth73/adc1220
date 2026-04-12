@@ -8,7 +8,7 @@ source = { editable = "." }
 dependencies = [
     { name = "docopt" },
     { name = "rpi-gpio", marker = "platform_machine == 'aarch64'" },
-    { name = "sensorspi" },
+    { name = "senspi" },
     { name = "spidev", marker = "platform_machine == 'aarch64'" },
 ]
 
@@ -27,7 +27,7 @@ dev = [
 requires-dist = [
     { name = "docopt", specifier = ">=0.6.2" },
     { name = "rpi-gpio", marker = "platform_machine == 'aarch64'", specifier = ">=0.7.1" },
-    { name = "sensorspi", directory = "../sensor-spi" },
+    { name = "senspi", directory = "../sensor-spi" },
     { name = "spidev", marker = "platform_machine == 'aarch64'", specifier = ">=3.8" },
 ]
 
@@ -280,7 +280,7 @@ wheels = [
 ]
 
 [[package]]
-name = "sensorspi"
+name = "senspi"
 source = { directory = "../sensor-spi" }
 dependencies = [
     { name = "docopt" },
