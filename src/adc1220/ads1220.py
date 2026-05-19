@@ -1,10 +1,10 @@
 import json
-import logging
 import time
 from collections.abc import Callable
 from typing import Any
 
 from senspi.constants import NUMBER_PARAMETERS
+from senspi.readconfig import get_logger
 
 from jonasjelonek.ads1220 import ADS1220
 
@@ -24,7 +24,7 @@ SCHEMA = {
     "@defaults": NUMBER_PARAMETERS,
 }
 
-log = logging.getLogger(__name__)
+log = get_logger(__name__)
 
 
 def initialize(parameters: dict[str, Any] | None = None) -> Callable[[], float]:
@@ -36,6 +36,10 @@ def initialize(parameters: dict[str, Any] | None = None) -> Callable[[], float]:
     log.info(f"Initialized pushpull, gain={gain}, cfg is {parameters}")
 
     def read():
+        """
+        Return just the raw value from the ADC,
+        ignoring the gain and voltage.
+        """
         (
             _,
             _,
