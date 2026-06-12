@@ -199,12 +199,16 @@ class ADS1220:
     # Reading data with RDATA command after starting conversion may lead to
     # corrupted data.
     def __read_data_drdy(self):
-        while GPIO.input(ADS1220.PIN_DRDY):
-            time.sleep(0.001)
-
-        data = False
-        if not GPIO.input(ADS1220.PIN_DRDY):
-            data = self.spi.xfer([0x00, 0x00, 0x00])  # pyright: ignore[reportAttributeAccessIssue]
+        data = []
+        while True:
+            if not GPIO.input(ADS1220.PIN_DRDY):
+                data = self.spi.xfer([0x00, 0x00, 0x00])  # pyright: ignore[reportAttributeAccessIssue]
+                if data[0] == 255 and data[1] == 255 and data[2] == 255:
+                    print(f"read failure, trying again {data}")
+                else:
+                    break
+            else:
+                time.sleep(0.001)
         return data
 
     # Reads data by issuing RDATA command and reading the result.
